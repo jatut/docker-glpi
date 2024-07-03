@@ -7,7 +7,7 @@ services:
     container_name: mariadb
     hostname: mariadb
     volumes:
-      - /var/lib/mysql:/var/lib/mysql
+      - /srv/glpi/mysql:/var/lib/mysql
     env_file:
       - ./mariadb.env
     restart: always
@@ -22,7 +22,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - /var/www/html/glpi/:/var/www/html/glpi
+      - /srv/glpi/html:/var/www/html/glpi
     environment:
-      - TIMEZONE=Europe/Brussels
+      - TIMEZONE=Europe/Moscow
     restart: always
