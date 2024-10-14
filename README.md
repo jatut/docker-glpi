@@ -23,9 +23,9 @@
 - [Переменные среды](#environnment-variables)
   - [TIMEZONE](#timezone)
 
-# Introduction
+# Введение
 
-Install and run an GLPI instance with docker
+Установка и запуск экземпляр GLPI с помощью докера.
 
 ## Default accounts
 
