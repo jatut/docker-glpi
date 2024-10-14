@@ -7,7 +7,7 @@
 - [Проект по развертыванию GLPI с помощью docker](#project-to-deploy-glpi-with-docker)
 
 - [Оглавление](#table-of-contents)
-- [Введение](#introduction)
+- [Введение](#Введение)
   - [Аккаунты по умолчанию](#default-accounts)
 - [Развертывание с помощью командной строки (CLI)](#deploy-with-cli)
   - [Развертывание GLPI](#deploy-glpi)
