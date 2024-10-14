@@ -27,7 +27,7 @@
 
 Установка и запуск экземпляр GLPI с помощью докера.
 
-## Аккаунты по умолчанию
+## [Аккаунты по умолчанию](#accaunt)
 
 More info in the 📄[Docs](https://glpi-install.readthedocs.io/en/latest/install/wizard.html#end-of-installation)
 
