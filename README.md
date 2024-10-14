@@ -9,7 +9,7 @@
 - [Оглавление](#table-of-contents)
 - [Введение](#Введение)
   - [Аккаунты по умолчанию](#Аккаунты_по_умолчанию)
-- [Развертывание с помощью командной строки (CLI)](#deploy-with-cli)
+- [Развертывание с помощью командной строки (CLI)](#Развертывание-с-помощью-командной-строки-(CLI))
   - [Развертывание GLPI](#deploy-glpi)
   - [Развертывание GLPI с существующей базой данных](#deploy-glpi-with-existing-database)
   - [Развертывание GLPI с данными базы данных и переменными.](#deploy-glpi-with-database-and-persistence-data)
@@ -29,16 +29,16 @@
 
 ## Аккаунты_по_умолчанию
 
-More info in the 📄[Docs](https://glpi-install.readthedocs.io/en/latest/install/wizard.html#end-of-installation)
+Больше информации в 📄[Docs](https://glpi-install.readthedocs.io/en/latest/install/wizard.html#end-of-installation)
 
-| Login/Password     	| Role              	|
-|--------------------	|-------------------	|
-| glpi/glpi          	| admin account     	|
-| tech/tech          	| technical account 	|
-| normal/normal      	| "normal" account  	|
-| post-only/postonly 	| post-only account 	|
+| Login/Password     | Роль              	    |
+|--------------------|------------------------|
+| glpi/glpi          | администратор GLPI     |
+| tech/tech          | технический специалист	|
+| normal/normal      | простой пользователь  	|
+| post-only/postonly | только публикаия      	|
 
-# Deploy with CLI
+# Развертывание с помощью командной строки (CLI)
 
 ## Deploy GLPI 
 ```sh
