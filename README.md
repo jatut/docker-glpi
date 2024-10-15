@@ -13,7 +13,7 @@
   - [Развертывание GLPI](#Развертывание_GLPI)
   - [Развертывание GLPI с существующей базой данных](#Развертывание_GLPI_с_существующей_базой_данных)
   - [Развертывание GLPI с данными базы данных и переменными.](#Развертывание_GLPI_с_данными_базы_данных_и_переменными.)
-  - [Развертывание конкретной версии GLPI](#deploy-a-specific-release-of-glpi)
+  - [Развертывание конкретной версии GLPI](#Развертывание_конкретной_версии_GLPI)
 - [Развертывание с помощью docker-compose](#deploy-with-docker-compose)
   - [Развертывание без сохраняемых данных (для быстрого тестирования)](#deploy-without-persistence-data--for-quickly-test-)
   - [Развертывание определенной версии](#deploy-a-specific-release)
@@ -70,7 +70,7 @@ docker run --name glpi --link mariadb:mariadb --volume /var/www/html/glpi:/var/w
 
 Наслаждайтесь :)
 
-## Deploy a specific release of GLPI
+## Развертывание_конкретной_версии_GLPI
 Default, docker run will use the latest release of GLPI.
 For an usage on production environnement, it's recommanded to set specific release.
 Here an example for release 9.1.6 :
