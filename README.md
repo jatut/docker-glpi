@@ -10,9 +10,9 @@
 - [Введение](#Введение)
   - [Аккаунты по умолчанию](#Аккаунты_по_умолчанию)
 - [Развертывание с помощью командной строки (CLI)](#Развертывание_с_помощью_командной_строки_(CLI))
-  - [Развертывание GLPI](#deploy-glpi)
-  - [Развертывание GLPI с существующей базой данных](#deploy-glpi-with-existing-database)
-  - [Развертывание GLPI с данными базы данных и переменными.](#deploy-glpi-with-database-and-persistence-data)
+  - [Развертывание GLPI](#Развертывание_GLPI)
+  - [Развертывание GLPI с существующей базой данных](#Развертывание_GLPI_с_существующей_базой_данных)
+  - [Развертывание GLPI с данными базы данных и переменными.](#Развертывание_GLPI_с_данными_базы_данных_и_переменными.)
   - [Развертывание конкретной версии GLPI](#deploy-a-specific-release-of-glpi)
 - [Развертывание с помощью docker-compose](#deploy-with-docker-compose)
   - [Развертывание без сохраняемых данных (для быстрого тестирования)](#deploy-without-persistence-data--for-quickly-test-)
@@ -40,18 +40,18 @@
 
 # Развертывание_с_помощью_командной_строки_(CLI)
 
-## Deploy GLPI 
+## Развертывание_GLPI
 ```sh
 docker run --name mariadb -e MARIADB_ROOT_PASSWORD=diouxx -e MARIADB_DATABASE=glpidb -e MARIADB_USER=glpi_user -e MARIADB_PASSWORD=glpi -d mariadb:10.7
 docker run --name glpi --link mariadb:mariadb -p 80:80 -d diouxx/glpi
 ```
 
-## Deploy GLPI with existing database
+## Развертывание_GLPI_с_существующей_базой_данных
 ```sh
 docker run --name glpi --link yourdatabase:mariadb -p 80:80 -d diouxx/glpi
 ```
 
-## Deploy GLPI with database and persistence data
+## Развертывание_GLPI_с_данными_базы_данных_и_переменными.
 
 For an usage on production environnement or daily usage, it's recommanded to use container with volumes to persistent data.
 
