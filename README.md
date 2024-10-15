@@ -194,13 +194,13 @@ docker-compose up -d
 ## TIMEZONE
 Если вам нужно установить часовой пояс для Apache и PHP
 
-Из командной строки
+*Из командной строки*
 ```sh
 docker run --name glpi --hostname glpi --link mariadb:mariadb --volumes-from glpi-data -p 80:80 --env "TIMEZONE=Europe/Brussels" -d diouxx/glpi
 ```
-С использованием docker-compose
+*С использованием docker-compose*
 
-Измените эти настройки
+Измените эти настройки в файле *docker-compose.yaml*
 ```yaml
 environment:
      TIMEZONE=Europe/Moscow
