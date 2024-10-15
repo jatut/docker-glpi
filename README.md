@@ -16,11 +16,11 @@
   - [Развертывание конкретной версии GLPI](#Развертывание_конкретной_версии_GLPI)
 - [Развертывание с помощью docker-compose](#Развертывание_с_помощью_docker-compose)
   - [Развертывание без сохраняемых данных (для быстрого тестирования)](#Развертывание_без_сохраняемых_данных_(для_быстрого_тестирования))
-  - [Развертывание определенной версии](#deploy-a-specific-release)
-  - [Развертывание с постоянными данными](#deploy-with-persistence-data)
+  - [Развертывание определенной версии](#Развертывание_определенной_версии)
+  - [Развертывание с постоянными данными](#Развертывание_с_постоянными_данными)
     - [mariadb.env](#mariadbenv)
     - [docker-compose .yml](#docker-compose-yml)
-- [Переменные среды](#environnment-variables)
+- [Переменные среды](#Переменные_среды)
   - [TIMEZONE](#timezone)
 
 # Введение
@@ -85,7 +85,7 @@ docker run --name glpi --hostname glpi --link mariadb:mariadb --volume /var/www/
 version: "3.8"
 
 services:
-#MariaDB Container
+#Контейнер MariaDB
   mariadb:
     image: mariadb:10.7
     container_name: mariadb
@@ -96,7 +96,7 @@ services:
       - MARIADB_USER=glpi_user
       - MARIADB_PASSWORD=glpi
 
-#GLPI Container
+#Контейнер GLPI
   glpi:
     image: diouxx/glpi
     container_name : glpi
@@ -105,13 +105,13 @@ services:
       - "80:80"
 ```
 
-## Deploy a specific release
+## Развертывание_определенной_версии
 
 ```yaml
 version: "3.8"
 
 services:
-#MariaDB Container
+#Контейнер MariaDB
   mariadb:
     image: mariadb:10.7
     container_name: mariadb
@@ -122,7 +122,7 @@ services:
       - MARIADB_USER=glpi_user
       - MARIADB_PASSWORD=glpi
 
-#GLPI Container
+#Контейнер GLPI
   glpi:
     image: diouxx/glpi
     container_name : glpi
@@ -133,15 +133,14 @@ services:
       - "80:80"
 ```
 
-## Deploy with persistence data
+## Развертывание_с_постоянными_данными
 
-To deploy with docker compose, you use *docker-compose.yml* and *mariadb.env* file.
-You can modify **_mariadb.env_** to personalize settings like :
+Для развертывания с помощью docker compose используются файлы *docker-compose.yml* и *mariadb.env*. Вы можете изменить **_mariadb.env_**, чтобы персонализировать такие параметры, как:
 
-* MariaDB root password
-* GLPI database
-* GLPI user database
-* GLPI user password
+* MariaDB root password - пароль root БД MariaDB
+* GLPI database         - имя БД GLPI
+* GLPI user database    - имя пользователя БД GLPI
+* GLPI user password    - пароль пользователя БД GLPI
 
 
 ### mariadb.env
@@ -190,20 +189,19 @@ To deploy, just run the following command on the same directory as files
 docker-compose up -d
 ```
 
-# Environnment variables
+# Переменные_среды
 
 ## TIMEZONE
-If you need to set timezone for Apache and PHP
+Если вам нужно установить часовой пояс для Apache и PHP
 
-From commande line
+Из командной строки
 ```sh
 docker run --name glpi --hostname glpi --link mariadb:mariadb --volumes-from glpi-data -p 80:80 --env "TIMEZONE=Europe/Brussels" -d diouxx/glpi
 ```
+С использованием docker-compose
 
-From docker-compose
-
-Modify this settings
+Измените эти настройки
 ```yaml
 environment:
-     TIMEZONE=Europe/Brussels
+     TIMEZONE=Europe/Moscow
 ```
