@@ -71,9 +71,9 @@ docker run --name glpi --link mariadb:mariadb --volume /var/www/html/glpi:/var/w
 Наслаждайтесь :)
 
 ## Развертывание_конкретной_версии_GLPI
-Default, docker run will use the latest release of GLPI.
-For an usage on production environnement, it's recommanded to set specific release.
-Here an example for release 9.1.6 :
+
+По умолчанию при запуске Docker будет использоваться последняя версия GLPI. Для использования в производственной среде рекомендуется установить конкретную версию. Вот пример для версии 9.1.6:
+
 ```sh
 docker run --name glpi --hostname glpi --link mariadb:mariadb --volume /var/www/html/glpi:/var/www/html/glpi -p 80:80 --env "VERSION_GLPI=9.1.6" -d diouxx/glpi
 ```
