@@ -53,21 +53,22 @@ docker run --name glpi --link yourdatabase:mariadb -p 80:80 -d diouxx/glpi
 
 ## Развертывание_GLPI_с_данными_базы_данных_и_переменными.
 
-For an usage on production environnement or daily usage, it's recommanded to use container with volumes to persistent data.
+Для использования в производственной среде или ежедневного использования рекомендуется использовать контейнер с томами для постоянных данных.
 
-* First, create MariaDB container with volume
+* Сначала создайте контейнер MariaDB с томом
 
 ```sh
 docker run --name mariadb -e MARIADB_ROOT_PASSWORD=diouxx -e MARIADB_DATABASE=glpidb -e MARIADB_USER=glpi_user -e MARIADB_PASSWORD=glpi --volume /var/lib/mysql:/var/lib/mysql -d mariadb:10.7
 ```
 
-* Then, create GLPI container with volume and link MariaDB container
+* Затем создайте контейнер GLPI с томом и свяжите контейнер с MariaDB.
+
 
 ```sh
 docker run --name glpi --link mariadb:mariadb --volume /var/www/html/glpi:/var/www/html/glpi -p 80:80 -d diouxx/glpi
 ```
 
-Enjoy :)
+Наслаждайтесь :)
 
 ## Deploy a specific release of GLPI
 Default, docker run will use the latest release of GLPI.
