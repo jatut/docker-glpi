@@ -183,7 +183,7 @@ services:
     restart: always
 ```
 
-To deploy, just run the following command on the same directory as files
+Для развертывания просто запустите следующую команду в том же каталоге, что и файлы.
 
 ```sh
 docker-compose up -d
