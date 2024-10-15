@@ -14,8 +14,8 @@
   - [Развертывание GLPI с существующей базой данных](#Развертывание_GLPI_с_существующей_базой_данных)
   - [Развертывание GLPI с данными базы данных и переменными.](#Развертывание_GLPI_с_данными_базы_данных_и_переменными.)
   - [Развертывание конкретной версии GLPI](#Развертывание_конкретной_версии_GLPI)
-- [Развертывание с помощью docker-compose](#deploy-with-docker-compose)
-  - [Развертывание без сохраняемых данных (для быстрого тестирования)](#deploy-without-persistence-data--for-quickly-test-)
+- [Развертывание с помощью docker-compose](#Развертывание_с_помощью_docker-compose)
+  - [Развертывание без сохраняемых данных (для быстрого тестирования)](#Развертывание_без_сохраняемых_данных_(для_быстрого_тестирования))
   - [Развертывание определенной версии](#deploy-a-specific-release)
   - [Развертывание с постоянными данными](#deploy-with-persistence-data)
     - [mariadb.env](#mariadbenv)
@@ -78,9 +78,9 @@ docker run --name glpi --link mariadb:mariadb --volume /var/www/html/glpi:/var/w
 docker run --name glpi --hostname glpi --link mariadb:mariadb --volume /var/www/html/glpi:/var/www/html/glpi -p 80:80 --env "VERSION_GLPI=9.1.6" -d diouxx/glpi
 ```
 
-# Deploy with docker-compose
+# Развертывание_с_помощью_docker-compose
 
-## Deploy without persistence data ( for quickly test )
+## Развертывание_без_сохраняемых_данных_( для_быстрого_тестирования )
 ```yaml
 version: "3.8"
 
